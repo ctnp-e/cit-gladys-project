@@ -21,15 +21,3 @@ def gpsAverage(x, y):
     return average
 
 # end of the code by Minh Le
-
-def distance(current, destination):
-	"""
-		document your function definition here. what does it do?
-	"""
-
-	"""
-		delete the remaining code *in this function* and replace it with
-		your own code. add more code to do what the assignment asks of you.
-	"""
-
-	return 100
