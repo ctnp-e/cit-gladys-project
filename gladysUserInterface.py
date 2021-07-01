@@ -21,10 +21,7 @@ def runTests():
 	average = compute.gpsAverage(4, 5)
 	print("average = ", average)
 
-	# delete the remaining code *in this function* and replace it with
-	# your code. add more code to do what the assignment asks you to do.
-	# add 3 more tests of different functions in different modules
-	print("hello!")
+	print("Need to add 3 tests")
 
 
 def start():
@@ -42,20 +39,16 @@ def runApp(userName):
 		runs the app
 	"""
 
-	# loop until user types q
 	userQuit = False
 	current_x = 1
 	current_y = 1
 	dest_x = 2
 	dest_y = 2
 	distance = compute.distance((current_x, current_y), (dest_x, dest_y))
+	# loop until user types q
 	while (not userQuit):
 
 		# menu
-		"""
-			here student needs to print their own menu. or, to do better, 
-			create a function to print your menu and simply call it here.
-		"""
 		print("-- Welcome to the Gladys West Map App --")
 		print("email = ", userName)
 		print(f"Current position    : x = {current_x}, y = {current_y}")
@@ -75,12 +68,6 @@ def runApp(userName):
 		lowerInput = userInput.lower()
 		firstChar = lowerInput[0:1]
 
-		# menu choices, use a switch-like if-elif control structure
-
-		"""
-			here students need to change and add to this code to
-			handle their menu options
-		"""
 		# quit
 		if firstChar == 'q':
 			userQuit = True
@@ -89,14 +76,17 @@ def runApp(userName):
 		elif firstChar == 't':
 			runTests()
 
+		# set current position
 		elif firstChar == 'c':
 			current_x = int(input("Enter current x: "))
 			current_y = int(input("Enter current y: "))
 
+		# set destination postition
 		elif firstChar == 'd':
 			dest_x = int(input("Enter destination x: "))
 			dest_y = int(input("Enter destination y: "))
 
+		# display destination
 		elif firstChar == 'm':
 			print("---------------")
 			print(f" distance = {distance}")
