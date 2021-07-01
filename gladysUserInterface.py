@@ -10,7 +10,7 @@ import gladysUserLogin as userLogin
 	Description: This module does Gladys West Map App
 """
 
-
+#start of the code by Ngoc Nguyen
 def runTests():
 	"""
 		tests some module functions
@@ -98,3 +98,4 @@ def runApp(userName):
 	print("\n")
 	print("Thank you for using the Gladys West Map App!")
 	print("\n")
+# end of the code by Ngoc Nguyen
