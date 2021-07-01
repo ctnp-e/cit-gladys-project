@@ -93,6 +93,10 @@ def runApp(userName):
 			current_x = int(input("Enter current x: "))
 			current_y = int(input("Enter current y: "))
 
+		elif firstChar == 'd':
+			dest_x = int(input("Enter destination x: "))
+			dest_y = int(input("Enter destination y: "))
+
 		else:
 			print("ERROR: " + firstChar + " is not a valid command")
 
