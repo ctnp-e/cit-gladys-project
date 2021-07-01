@@ -47,5 +47,10 @@ def gpsValue(x, y, sat):
 	data.append(readSat("time", pathToJSONDataFiles)) #also puts time into "data"
 
 	# Returns the data that was read
+
+	#data is essentially just an array of arrays.
+	#to retrieve one element you do data[x][y] to retrieve a certain portion of a certain array.
+	#arrays are sorted as x: y: value: so to retrieve for example the value of the index'd 3rd data set
+	#you would simply do data[3][2]
 	value = data
 	return value
