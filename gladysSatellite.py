@@ -2,12 +2,12 @@ import io
 import json
 
 """
-	Student: Gabriel Solomon
-	Module: gladysSatellite
-	Description: This module does …
+     Student: Mary Ivanov, Avyuktha Mattupalli
+     Module: gladysSatellite
+     Description: This module does satellite stuff
 """
 
-
+#DO NOT CHANGE
 def readSat(sat, pathToJSONDataFiles):
 	"""
 		reads satellite data from a json file
@@ -35,39 +35,22 @@ def readSat(sat, pathToJSONDataFiles):
 
 def gpsValue(x, y, sat):
 	"""
-		document your function definition here. what does it do?
+		Reads the altitude, and time information into data structures "data".
+		Returns the data that was read to the gladysUserInterface module
 	"""
 
-	"""
-		This first part of this function to read satelite data only read 
-		satellite data. students need to change the pathToJSONDataFiles 
-		variable so it works on your computer.
-
-		this is *windows* path, not a mac path.
-		if you do not know what a path (on a computer) is, you should use google and
-		youtube to learn, or come to office hours so I can explain it to you.
-
-		students will need to change this pathToJSONDataFiles variable to point to
-		where you have the data files stoed on your computer.  If you do not
-		change it, the code will not "work".
-
-		You can/should remove this long comment before you submit your work.  
-		I'm just giving advice to try to help you. Good luck!  -Gabriel :)
-	"""
+	#change it to whatever your path is (windows specific)
 	pathToJSONDataFiles = "C:/Users/jerom/GitHub/evc-cit134a-python/gladys-west-map/data"
 
 	# read the satellite data
-	data = readSat(sat, pathToJSONDataFiles)
+	data = readSat("altitude", pathToJSONDataFiles) #first instance of putting stuff into data
+	data.append(readSat("time", pathToJSONDataFiles)) #also puts time into "data"
 
-	"""
-		delete the remaining code *in this function* and replace it with
-		your own code. add more code to do what the assignment asks of you.
+	# Returns the data that was read
 
-		tip: here is where students need to look through the data variable
-		read from the satellites and find a matching x,y to return the value.
-		to understand better, open and look at the json satellite data in
-		vs code.
-	"""
-	value = 1234
-
+	#data is essentially just an array of arrays.
+	#to retrieve one element you do data[x][y] to retrieve a certain portion of a certain array.
+	#arrays are sorted as x: y: value: so to retrieve for example the value of the index'd 3rd data set
+	#you would simply do data[3][2]
+	value = data
 	return value
