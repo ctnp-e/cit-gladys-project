@@ -89,6 +89,10 @@ def runApp(userName):
 		elif firstChar == 't':
 			runTests()
 
+		elif firstChar == 'c':
+			current_x = int(input("Enter current x: "))
+			current_y = int(input("Enter current y: "))
+
 		else:
 			print("ERROR: " + firstChar + " is not a valid command")
 
