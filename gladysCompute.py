@@ -35,6 +35,5 @@ def distance(current, destination):
 		delete the remaining code *in this function* and replace it with
 		your own code. add more code to do what the assignment asks of you.
 	"""
-	distance = gpsAverage(3, 4)
 
-	return distance
+	return 100
