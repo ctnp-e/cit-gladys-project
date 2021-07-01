@@ -97,6 +97,11 @@ def runApp(userName):
 			dest_x = int(input("Enter destination x: "))
 			dest_y = int(input("Enter destination y: "))
 
+		elif firstChar == 'm':
+			print("---------------")
+			print(f" distance = {distance}")
+			print("---------------")
+			
 		else:
 			print("ERROR: " + firstChar + " is not a valid command")
 
