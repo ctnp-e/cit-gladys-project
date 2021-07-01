@@ -44,6 +44,11 @@ def runApp(userName):
 
 	# loop until user types q
 	userQuit = False
+	current_x = 1
+	current_y = 1
+	dest_x = 2
+	dest_y = 2
+	distance = compute.distance((current_x, current_y), (dest_x, dest_y))
 	while (not userQuit):
 
 		# menu
@@ -52,7 +57,17 @@ def runApp(userName):
 			create a function to print your menu and simply call it here.
 		"""
 		print("-- Welcome to the Gladys West Map App --")
+		print("email = ", userName)
+		print(f"Current position    : x = {current_x}, y = {current_y}")
+		print(f"Destination position: x = {dest_x}, y = {dest_y}")
+		print(f"Distance            : {distance}")
+		print()
 		print("Type t to run tests or q to quit")
+		print(" [c] to set current position")
+		print(" [d] to set destination position")
+		print(" [m] to map - which tell the distance")
+		print(" [t] to run moduel test")
+		print(" [q] to quit")
 		print()
 
 		# get first character of input
