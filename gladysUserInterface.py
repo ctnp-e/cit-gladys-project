@@ -40,10 +40,10 @@ def runApp(userName):
 	"""
 
 	userQuit = False
-	current_x = 1
-	current_y = 1
-	dest_x = 2
-	dest_y = 2
+	current_x = 0
+	current_y = 0
+	dest_x = 0
+	dest_y = 0
 	distance = compute.distance((current_x, current_y), (dest_x, dest_y))
 	# loop until user types q
 	while (not userQuit):
