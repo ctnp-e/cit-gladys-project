@@ -2,9 +2,9 @@ import io
 import json
 
 """
-	Student: Gabriel Solomon
-	Module: gladysSatellite
-	Description: This module does …
+     Student: Mary Ivanov, Avyuktha Mattupalli
+     Module: gladysSatellite
+     Description: This module does satellite stuff
 """
 
 
