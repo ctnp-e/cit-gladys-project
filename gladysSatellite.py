@@ -40,7 +40,7 @@ def gpsValue(x, y, sat):
 	"""
 
 	#change it to whatever your path is (windows specific)
-	pathToJSONDataFiles = "C:/Users/jerom/GitHub/evc-cit134a-python/gladys-west-map/data"
+	pathToJSONDataFiles = "data"
 
 	# read the satellite data
 	data = readSat("altitude", pathToJSONDataFiles) #first instance of putting stuff into data
