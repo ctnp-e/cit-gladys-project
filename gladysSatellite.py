@@ -39,18 +39,24 @@ def gpsValue(x, y, sat):
 		Returns the data that was read to the gladysUserInterface module
 	"""
 
-	#change it to whatever your path is (windows specific)
+	# change it to whatever your path is (windows specific)
+	#pathToJSONDataFiles = "D:/Downloads/notes n stuff/CODING/CIT/cit-gladys-project/JSON_FILES"
+
+	
+
+    # TODO: move somewhere so we need to read only once
 	pathToJSONDataFiles = "D:/Downloads/notes n stuff/CODING/CIT/cit-gladys-project/JSON_FILES"
+	data = readSat(sat, pathToJSONDataFiles) #first instance of putting stuff into data
 
-	# read the satellite data
-	data = readSat("altitude", pathToJSONDataFiles) #first instance of putting stuff into data
-	data.append(readSat("time", pathToJSONDataFiles)) #also puts time into "data"
-
-	# Returns the data that was read
-
-	#data is essentially just an array of arrays.
-	#to retrieve one element you do data[x][y] to retrieve a certain portion of a certain array.
-	#arrays are sorted as x: y: value: so to retrieve for example the value of the index'd 3rd data set
-	#you would simply do data[3][2]
-	value = data
+	ddata ={}
+	for obj in data:
+		if obj['x'] not in ddata:
+			ddata[obj['x']] = {}
+		if obj['y'] not in ddata[obj['x']]:
+			ddata[obj['x']][obj['y']] = obj['value']
+	try:
+		value = ddata[x][y]
+	except:
+		value = 0
+	print(value)
 	return value
