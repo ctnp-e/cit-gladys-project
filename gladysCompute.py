@@ -28,7 +28,7 @@ def distance(current, destination):
 	This function calculates the distance between two positions by multiply their GPS average with each other
 	"""
 	
-	distance = gpsAverage(current['0'], current['1']) * gpsAverage(destination['0'], destination['1'])
+	distance = gpsAverage(current[0], current[1]) * gpsAverage(destination[0], destination[1])
 	
 	return distance
 
