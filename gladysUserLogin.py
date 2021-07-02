@@ -1,18 +1,22 @@
 """
-	Student: Ngoc Nguyen
+	Student: Ngoc Nguyen + a little bit of mary ivanov
 	Module: gladysUserLogin
 	Description: This module does user login
 """
 
 # start of the codes by Ngoc Nguyen
 def login():
+	"""
+		Logs user in
+	"""
 	# Loop until user enters a valid email address
 	isEmailValid = False
 	while not isEmailValid:
-		email = input('email: ')
-		isEmailValid = '@' in email
+		emailAddress = input('email: ')
+		isEmailValid = '@' in emailAddress
 
 	password = input('password: ') # any password works
 
-	return email
+	return emailAddress
 # end of the codes by Ngoc Nguyen
+#a little bit of combing by Mary Ivanov
