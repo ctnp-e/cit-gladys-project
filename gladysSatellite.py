@@ -25,8 +25,6 @@ def readSat(sat, pathToJSONDataFiles):
 		print("ERROR: Unable to open the file " + filePath)
 		raise IOError
 
-	# print("filePath = ", filePath)
-
 	# read the file
 	data = json.load(fileHandle)
 
