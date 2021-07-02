@@ -58,5 +58,4 @@ def gpsValue(x, y, sat):
 		value = ddata[x][y]
 	except:
 		value = 0
-	print(value)
 	return value

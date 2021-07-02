@@ -26,7 +26,8 @@ def distance(current, destination):
 	"""
 		calculates distance
 	"""
-	print(current)
 	distance = gpsAverage(current) * gpsAverage(destination)
 
 	return distance
+
+# end of distance by Mary Ivanov
