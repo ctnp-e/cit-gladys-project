@@ -24,12 +24,9 @@ def gpsAverage(x, y):
 
 def distance(current, destination):
 	"""
-		document your function definition here. what does it do?
+		calculates distance
 	"""
 
-	"""
-		delete the remaining code *in this function* and replace it with
-		your own code. add more code to do what the assignment asks of you.
-	"""
+	distance = gpsAverage(current) * gpsAverage(destination)
 
-	return 100
+	return distance
