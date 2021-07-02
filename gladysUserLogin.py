@@ -9,13 +9,13 @@ import io
 
 def login():
 	"""
-		document your function definition here. what does it do?
+		asks user for email and does not accept the email if it does not contain the @ symbol.
 	"""
 
-	"""
-		delete the remaining code *in this function* and replace it with
-		your own code. add more code to do what the assignment asks of you.
-	"""
-	emailAddress = "malcomx@mecca.com"
+	emailAddress = " "
+	while("@" not in emailAddress):
+		emailAddress = input("Enter your email address: ")
+	
+	password = input("Type in your password: ")
 
 	return emailAddress
