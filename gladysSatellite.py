@@ -7,6 +7,13 @@ import json
      Description: This module does satellite stuff
 """
 
+data = {
+	'altitude': None,
+	'latitude': None,
+	'longitude': None,
+	'time': None,
+}
+
 #DO NOT CHANGE
 def readSat(sat, pathToJSONDataFiles):
 	"""
@@ -30,25 +37,22 @@ def readSat(sat, pathToJSONDataFiles):
 
 	return data
 
+def loadData():
+	"""
+		Loads the altitude, and time information into data structures "data".
+	"""
+
+	for dim in [ "altitude", "latitude", "longitude", "time"]:
+		converted = dict()
+		for d in readSat(dim, "data"):
+			if d['x'] not in converted:
+				converted[d['x']] = dict()
+			converted[d['x']][d['y']] = d['value']
+		data[dim] = converted
 
 def gpsValue(x, y, sat):
 	"""
 		Reads the altitude, and time information into data structures "data".
 		Returns the data that was read to the gladysUserInterface module
 	"""
-
-	#change it to whatever your path is (windows specific)
-	pathToJSONDataFiles = "data"
-
-	# read the satellite data
-	data = readSat("altitude", pathToJSONDataFiles) #first instance of putting stuff into data
-	data.append(readSat("time", pathToJSONDataFiles)) #also puts time into "data"
-
-	# Returns the data that was read
-
-	#data is essentially just an array of arrays.
-	#to retrieve one element you do data[x][y] to retrieve a certain portion of a certain array.
-	#arrays are sorted as x: y: value: so to retrieve for example the value of the index'd 3rd data set
-	#you would simply do data[3][2]
-	value = data
-	return value
+	return data[sat][x][y]

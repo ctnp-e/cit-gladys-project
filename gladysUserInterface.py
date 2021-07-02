@@ -31,6 +31,8 @@ def start():
 
 	userName = userLogin.login()
 
+	satellite.loadData()
+
 	runApp(userName)
 
 
