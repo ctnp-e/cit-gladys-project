@@ -46,10 +46,9 @@ def runApp(userName):
 	current_y = 0
 	dest_x = 0
 	dest_y = 0
-	distance = compute.distance((current_x, current_y), (dest_x, dest_y))
 	# loop until user types q
 	while (not userQuit):
-
+		distance = compute.distance((current_x, current_y), (dest_x, dest_y))
 		# menu
 		print("-- Welcome to the Gladys West Map App --")
 		print("email = ", userName)
