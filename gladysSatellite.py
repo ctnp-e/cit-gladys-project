@@ -45,7 +45,7 @@ def gpsValue(x, y, sat):
 	
 
     # TODO: move somewhere so we need to read only once
-	pathToJSONDataFiles = "D:/Downloads/notes n stuff/CODING/CIT/cit-gladys-project/JSON_FILES"
+	pathToJSONDataFiles = "D:/Downloads/notes n stuff/CODING/CIT/cit-gladys-project/data"
 	data = readSat(sat, pathToJSONDataFiles) #first instance of putting stuff into data
 
 	ddata ={}
