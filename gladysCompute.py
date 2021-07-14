@@ -20,6 +20,22 @@ def gpsAverage(place):
     print(average)
     return average
 
+def gpsAverage(x, y):
+    """ 
+    This function computes the GPS value average of a position by taking a GPS value and dividing by 2 
+    """
+    
+    #Get coordinates from data returned by gpsValue
+    latitude = satellite.gpsValue(x, y, "latitude")[0][0]
+    longtitude = satellite.gpsValue(x, y, "longtitude")[0][0]
+    altitude = satellite.gpsValue(x, y, "altitude")[0][0]
+    time = satellite.gpsValue(x, y, "time")[0][0]
+    
+    #Compute average
+    average = (latitude + longtitude + altitude + time) / 4
+
+    return average
+
 # end of the code by Minh Le
 
 def distance(current, destination):
