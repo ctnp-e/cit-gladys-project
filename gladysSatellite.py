@@ -1,3 +1,4 @@
+import io
 import json
 
 """
@@ -5,13 +6,6 @@ import json
      Module: gladysSatellite
      Description: This module does satellite stuff
 """
-
-data = {
-	'altitude': None,
-	'latitude': None,
-	'longitude': None,
-	'time': None,
-}
 
 #DO NOT CHANGE
 def readSat(sat, pathToJSONDataFiles):
@@ -31,27 +25,37 @@ def readSat(sat, pathToJSONDataFiles):
 		print("ERROR: Unable to open the file " + filePath)
 		raise IOError
 
+	# print("filePath = ", filePath)
+
 	# read the file
 	data = json.load(fileHandle)
 
 	return data
 
-def loadData():
-	"""
-		Loads the altitude, and time information into data structures "data".
-	"""
-
-	for dim in [ "altitude", "latitude", "longitude", "time"]:
-		converted = dict()
-		for d in readSat(dim, "data"):
-			if d['x'] not in converted:
-				converted[d['x']] = dict()
-			converted[d['x']][d['y']] = d['value']
-		data[dim] = converted
 
 def gpsValue(x, y, sat):
 	"""
 		Reads the altitude, and time information into data structures "data".
 		Returns the data that was read to the gladysUserInterface module
 	"""
-	return data[sat][x][y]
+
+	# change it to whatever your path is (windows specific)
+	#pathToJSONDataFiles = "D:/Downloads/notes n stuff/CODING/CIT/cit-gladys-project/JSON_FILES"
+
+	
+
+    # TODO: move somewhere so we need to read only once
+	pathToJSONDataFiles = "D:/Downloads/notes n stuff/CODING/CIT/cit-gladys-project/JSON_FILES"
+	data = readSat(sat, pathToJSONDataFiles) #first instance of putting stuff into data
+
+	ddata ={}
+	for obj in data:
+		if obj['x'] not in ddata:
+			ddata[obj['x']] = {}
+		if obj['y'] not in ddata[obj['x']]:
+			ddata[obj['x']][obj['y']] = obj['value']
+	try:
+		value = ddata[x][y]
+	except:
+		value = 0
+	return value
