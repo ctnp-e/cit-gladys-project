@@ -5,7 +5,7 @@ import gladysSatellite as satellite
 import gladysUserLogin as userLogin
 
 """
-	Student: Ngoc Nguyen, Ethan Cao
+	Student: Ngoc Nguyen
 	Module: gladysUserInterface
 	Description: This module does Gladys West Map App
 """
@@ -35,6 +35,16 @@ def start():
 
 	runApp(userName)
 
+
+def get_number(prompt):
+	is_in_range = False # num is from 0 to 99 inclusive
+	while not is_in_range:
+		try:
+			number = int(input(prompt))
+		except:
+			continue
+		is_in_range = number >= 0 and number <= 99
+	return number
 
 def runApp(userName):
 	"""
@@ -79,13 +89,13 @@ def runApp(userName):
 
 		# set current position
 		elif firstChar == 'c':
-			current_x = int(input("Enter current x: "))
-			current_y = int(input("Enter current y: "))
+			current_x = get_number("Enter current x: ")
+			current_y = get_number("Enter current y: ")
 
 		# set destination postition
 		elif firstChar == 'd':
-			dest_x = int(input("Enter destination x: "))
-			dest_y = int(input("Enter destination y: "))
+			dest_x = get_number("Enter destination x: ")
+			dest_y = get_number("Enter destination y: ")
 
 		# display destination
 		elif firstChar == 'm':
