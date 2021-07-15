@@ -1,5 +1,5 @@
 """
-	Student: Ngoc Nguyen + a little bit of mary ivanov
+	Student: Ngoc Nguyen 
 	Module: gladysUserLogin
 	Description: This module does user login
 """
@@ -14,9 +14,10 @@ def login():
 	while not isEmailValid:
 		emailAddress = input('email: ')
 		isEmailValid = '@' in emailAddress
+		if not isEmailValid:
+			print("ERROR: Email is not valid:", emailAddress)
 
 	password = input('password: ') # any password works
 
 	return emailAddress
 # end of the codes by Ngoc Nguyen
-#a little bit of combing by Mary Ivanov
