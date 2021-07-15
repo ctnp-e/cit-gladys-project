@@ -9,17 +9,6 @@ import gladysSatellite as satellite
 """
 # start of code by Minh Le
 
-def gpsAverage(place):
-    """ 
-    This function computes the GPS value average of a position by taking a GPS value and dividing by 2 
-    """
-	
-    value = satellite.gpsValue(place[0], place[1], "latitude")
-    
-    average = value / 2
-    print(average)
-    return average
-
 def gpsAverage(x, y):
     """ 
     This function computes the GPS value average of a position by taking a GPS value and dividing by 2 
