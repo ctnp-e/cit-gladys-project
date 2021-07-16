@@ -16,7 +16,7 @@ def gpsAverage(x, y):
     
     #Get coordinates from data returned by gpsValue
     latitude = satellite.gpsValue(x, y, "latitude")
-    longtitude = satellite.gpsValue(x, y, "longtitude")
+    longtitude = satellite.gpsValue(x, y, "longitude")
     altitude = satellite.gpsValue(x, y, "altitude")
     time = satellite.gpsValue(x, y, "time")
     
