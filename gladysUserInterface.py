@@ -69,7 +69,7 @@ def runApp(userName):
 		print(" [c] to set current position")
 		print(" [d] to set destination position")
 		print(" [m] to map - which tell the distance")
-		print(" [t] to run moduel test")
+		print(" [t] to run module test")
 		print(" [q] to quit")
 		print()
 
