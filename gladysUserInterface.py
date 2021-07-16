@@ -54,8 +54,7 @@ def runApp(userName):
 	current_y = -1
 	dest_x = -1
 	dest_y = -1
-	distance = compute.distance((current_x, current_y), (dest_x, dest_y))
-	# loop until user types q
+	# loop until user typess q
 	while (not userQuit):
 		distance = compute.distance((current_x, current_y), (dest_x, dest_y))
 		# menu
