@@ -1,5 +1,5 @@
 import io
-
+import math
 import gladysSatellite as satellite
 
 """
@@ -8,17 +8,6 @@ import gladysSatellite as satellite
 	Description: This module does compute program
 """
 # start of code by Minh Le
-
-def gpsAverage(place):
-    """ 
-    This function computes the GPS value average of a position by taking a GPS value and dividing by 2 
-    """
-	
-    value = satellite.gpsValue(place[0], place[1], "latitude")
-    
-    average = value / 2
-    print(average)
-    return average
 
 def gpsAverage(x, y):
     """ 
@@ -38,12 +27,15 @@ def gpsAverage(x, y):
 
 # end of the code by Minh Le
 
-def distance(current, destination):
-	"""
-		calculates distance
-	"""
-	distance = gpsAverage(current) * gpsAverage(destination)
+#Start of code by Hubert Pham
+def distance(current, dest):
+    
+    #initialize variables
+    aveg1 = 0
+    aveg2 = 0
+    distance = 0
 
-	return distance
-
-# end of distance by Mary Ivanov
+    aveg1 = math.pow(gpsAverage(current[0], current[1]), 2)
+    aveg2 = math.pow(gpsAverage(dest[0], dest[1], ), 2)
+    distance = math.sqrt(aveg1 + aveg2 )
+    return distance
